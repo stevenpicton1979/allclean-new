@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AllClean – Domestic House Cleaning Wigan & Nearby Areas</title>
+  <meta name="description" content="AllClean Domestic House Cleaning Agency – your local, family run house cleaners in Wigan and nearby areas. Call 07511 815204 for a free quote." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #e67e22;
+      --orange-light: #f39c12;
+      --orange-dark: #cf6d17;
+      --blue: #2e91fc;
+      --blue-dark: #1a73d4;
+      --dark: #212529;
+      --grey-light: #f9f9f9;
+      --grey-mid: #ecf0f1;
+      --white: #ffffff;
+      --text: #333;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    /* ── TICKER ── */
+    .ticker {
+      background: var(--blue);
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-align: center;
+      padding: 8px 16px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 5%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 52px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: var(--dark);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 480px;
+      background: url('https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1600&auto=format&fit=crop&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero-badge {
+      background: var(--orange);
+      color: var(--white);
+      display: inline-block;
+      padding: 18px 36px;
+      border-radius: 4px;
+      font-size: clamp(1rem, 2.5vw, 1.35rem);
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    /* ── INTRO STRIP ── */
+    .intro-strip {
+      background: var(--grey-mid);
+      text-align: center;
+      padding: 28px 10%;
+      font-size: 1.05rem;
+      border-bottom: 4px solid var(--orange);
+    }
+
+    .intro-strip em { font-style: italic; font-weight: 700; }
+
+    .intro-strip a {
+      color: var(--orange);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    /* ── THREE CARDS ── */
+    .cards-section {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      background: var(--white);
+    }
+
+    .card {
+      padding: 50px 36px;
+      text-align: center;
+      border-right: 1px solid var(--grey-mid);
+    }
+
+    .card:last-child { border-right: none; }
+
+    .card h3 {
+      color: var(--orange);
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .card p { color: #555; font-size: 0.97rem; margin-bottom: 20px; }
+
+    .card-btn {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      text-decoration: none;
+      padding: 9px 22px;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      transition: background 0.2s;
+    }
+
+    .card-btn:hover { background: var(--orange-dark); }
+
+    /* ── ORANGE DIVIDER ── */
+    .divider { height: 8px; background: var(--orange); }
+
+    /* ── CALLBACK SECTION ── */
+    .callback-section {
+      background: var(--grey-light);
+      padding: 60px 10%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .callback-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: var(--dark);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .callback-text h2 span { color: var(--orange); }
+
+    .callback-text p { color: #555; margin-bottom: 14px; font-size: 0.97rem; }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      text-decoration: none;
+      padding: 13px 30px;
+      border-radius: 6px;
+      font-weight: 800;
+      font-size: 1rem;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 8px;
+    }
+
+    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); }
+
+    .callback-form-box {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 36px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    .callback-form-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: var(--orange);
+    }
+
+    .form-group { margin-bottom: 16px; }
+
+    .form-group label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.88rem;
+      margin-bottom: 5px;
+      color: var(--dark);
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--dark);
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--orange);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 80px; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--orange);
+      color: var(--white);
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .form-submit:hover { background: var(--orange-dark); }
+
+    /* ── ABOUT SECTION ── */
+    #about {
+      background: var(--dark);
+      color: var(--white);
+      padding: 70px 10%;
+    }
+
+    #about h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--orange);
+      margin-bottom: 24px;
+    }
+
+    #about p { color: #ccc; margin-bottom: 14px; font-size: 0.97rem; max-width: 720px; }
+
+    #about .highlight-box {
+      background: var(--orange);
+      color: var(--white);
+      padding: 20px 28px;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-top: 24px;
+      display: inline-block;
+    }
+
+    /* ── SERVICES ── */
+    #services {
+      padding: 70px 10%;
+      background: var(--white);
+    }
+
+    #services h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    #services .section-sub {
+      color: #888;
+      margin-bottom: 40px;
+      font-size: 1rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      border: 2px solid var(--grey-mid);
+      border-radius: 10px;
+      padding: 32px 26px;
+      transition: border-color 0.25s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .service-card:hover {
+      border-color: var(--orange);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(230,126,34,0.12);
+    }
+
+    .service-icon {
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+    }
+
+    .service-card h4 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .service-card p { color: #666; font-size: 0.93rem; }
+
+    /* ── FAQ ── */
+    #faq {
+      background: var(--grey-light);
+      padding: 70px 10%;
+    }
+
+    #faq h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--dark);
+      margin-bottom: 36px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ddd;
+      padding: 18px 0;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      font-family: inherit;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 0;
+    }
+
+    .faq-question:hover { color: var(--orange); }
+
+    .faq-icon {
+      color: var(--orange);
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      transition: transform 0.25s;
+    }
+
+    .faq-answer {
+      display: none;
+      padding-top: 12px;
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-item.open .faq-answer { display: block; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials {
+      background: var(--orange);
+      padding: 70px 10%;
+      color: var(--white);
+    }
+
+    .testimonials h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: rgba(255,255,255,0.15);
+      border-radius: 10px;
+      padding: 28px 24px;
+      backdrop-filter: blur(4px);
+    }
+
+    .testimonial-card blockquote {
+      font-size: 0.97rem;
+      font-style: italic;
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+
+    .testimonial-author {
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .testimonial-location {
+      font-size: 0.82rem;
+      opacity: 0.8;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      padding: 70px 10%;
+      background: var(--white);
+    }
+
+    #contact h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    #contact .section-sub { color: #888; margin-bottom: 40px; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .contact-info p { color: #555; margin-bottom: 12px; }
+
+    .contact-info a {
+      color: var(--orange);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover { text-decoration: underline; }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--grey-mid);
+      font-weight: 600;
+      font-size: 0.97rem;
+    }
+
+    .contact-detail-icon { font-size: 1.4rem; }
+
+    /* ── JOBS ── */
+    #jobs {
+      background: var(--grey-mid);
+      padding: 70px 10%;
+    }
+
+    #jobs h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--dark);
+      margin-bottom: 16px;
+    }
+
+    #jobs p { color: #555; margin-bottom: 20px; max-width: 640px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: #aaa;
+      padding: 36px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.87rem;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--orange); }
+
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .cards-section { grid-template-columns: 1fr; }
+      .card { border-right: none; border-bottom: 1px solid var(--grey-mid); }
+      .callback-section { grid-template-columns: 1fr; gap: 32px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 76px; left: 0; right: 0; background: var(--white); padding: 16px 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      footer { flex-direction: column; text-align: center; }
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-badge { animation: fadeUp 0.7s ease both; }
+  </style>
+</head>
+<body>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    AllClean Domestic Cleaning Agency &nbsp;·····&nbsp; Your Local House Cleaners in Wigan and Nearby Areas &nbsp;·····&nbsp; Call us on <strong>07511 815204</strong>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <img src="https://www.allclean.cleaning/static/media/AllClean_logo.b3a5a93d40342e816dec.ico" alt="AllClean Logo" />
+    </a>
+    <div class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Our Services</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#jobs">Jobs</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        AllClean Domestic House Cleaning Service<br>in Wigan and Nearby Areas &nbsp;–&nbsp; 07511 815204
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO STRIP -->
+  <div class="intro-strip">
+    Cleanliness in the home is of utmost importance and <em>is even more vital during these times.</em>
+    <a href="#contact">AllClean are open for business</a> whilst keeping your safety and that of our cleaners paramount at all times.
+  </div>
+
+  <!-- THREE CARDS -->
+  <section class="cards-section">
+    <div class="card">
+      <h3>Our Services</h3>
+      <p>Regular weekly or fortnightly house cleaning in Wigan &amp; nearby areas plus "one off", end of tenancy or builders cleans.</p>
+      <a href="#services" class="card-btn">OUR SERVICES</a>
+    </div>
+    <div class="card">
+      <h3>Why Choose AllClean?</h3>
+      <p>AllClean Domestic House Cleaning in Wigan &amp; nearby areas are a family run business with over 15 years of experience in the industry.</p>
+      <a href="#about" class="card-btn">ABOUT US</a>
+    </div>
+    <div class="card">
+      <h3>Get a Quote</h3>
+      <p>We will visit you at a time to suit you to find out your individual requirements and answer your questions.</p>
+      <a href="#contact" class="card-btn">CONTACT US</a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CALLBACK / MAIN ABOUT -->
+  <section class="callback-section" id="about-detail">
+    <div class="callback-text">
+      <h2>Looking for Reliable, <span>Affordable,</span> Trustworthy Domestic House Cleaners in Wigan?</h2>
+      <p>AllClean is your <strong>LOCAL, family run</strong> domestic house cleaning agency with <strong>over 18 years of experience</strong> in house cleaning. Call us on <strong>07511 815204</strong> to discuss your requirements.</p>
+      <p>No property is too large or too small. Whether you have a 6 bedroom house or a one bedroom flat we can help.</p>
+      <p>Maybe you want advice on how best to tackle your regular domestic house cleaning requirements; you might have a specific budget you need to work to, or you simply wish to discuss the various options available to you.</p>
+      <p>From experience we know our clients prefer to meet someone in person, as they then feel reassured and know who we are. We tailor your house cleaning service to suit you and your requirements.</p>
+      <p>We will make an appointment to visit at a time convenient for you, answer any questions or concerns you may have, and offer any advice you may need. There is absolutely <strong>no obligation or hard sell</strong> involved.</p>
+      <a href="tel:07511815204" class="btn-primary">📞 Call 07511 815204 Now</a>
+    </div>
+    <div class="callback-form-box">
+      <h3>Request a Callback</h3>
+      <form onsubmit="handleForm(event)">
+        <div class="form-group">
+          <label for="cb-name">Your Name</label>
+          <input type="text" id="cb-name" placeholder="e.g. Jane Smith" required />
+        </div>
+        <div class="form-group">
+          <label for="cb-phone">Phone Number</label>
+          <input type="tel" id="cb-phone" placeholder="e.g. 07700 900000" required />
+        </div>
+        <div class="form-group">
+          <label for="cb-msg">Tell us about your requirements (optional)</label>
+          <textarea id="cb-msg" placeholder="e.g. Weekly clean, 3 bed house in Wigan..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Request Callback</button>
+      </form>
+      <p id="form-thanks" style="display:none; margin-top:16px; color: var(--orange); font-weight:700; text-align:center;">
+        ✅ Thank you! We'll be in touch shortly.
+      </p>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" style="background: var(--dark); color: var(--white); padding: 70px 10%;">
+    <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(1.5rem,3vw,2.2rem); color: var(--orange); margin-bottom: 24px;">AllClean Domestic Cleaning Agency</h2>
+    <p style="color:#ccc; margin-bottom:14px; max-width:720px;">Unlike some Domestic Cleaning Agencies who never meet their clients, we at AllClean realise that you as a customer need to meet and talk to a real human being in person, rather than just listen to a voice over the phone.</p>
+    <p style="color:#ccc; margin-bottom:14px; max-width:720px;">Fed up of going out to work, driving home, picking the kids up, collecting the shopping and then still having to do all the housework? <strong style="color:var(--orange);">Wouldn't you rather be doing something you enjoy?</strong></p>
+    <p style="color:#ccc; margin-bottom:14px; max-width:720px;">Let AllClean take the weight off. We are a LOCAL, family run domestic house cleaning agency with over 18 years of experience in house cleaning in Wigan and the surrounding areas.</p>
+    <div style="background:var(--orange); color:var(--white); padding:20px 28px; border-radius:8px; font-size:1.05rem; font-weight:700; margin-top:24px; display:inline-block;">
+      Insured · Family Run · 18+ Years Experience · No Hard Sell
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <p class="section-sub">Trusted cleaning solutions tailored to your home and budget</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h4>Regular House Cleaning</h4>
+        <p>Weekly or fortnightly house cleaning service across Wigan and nearby areas. We tailor each visit to your specific needs.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <h4>One-Off / Spring Cleans</h4>
+        <p>Deep cleans for when you need a thorough refresh. We supply all cleaning materials and equipment for one-off cleans.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔑</div>
+        <h4>End of Tenancy Cleans</h4>
+        <p>Specialist end of tenancy cleaning to help you get your deposit back or prepare a property for new tenants.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧱</div>
+        <h4>Builders Cleans</h4>
+        <p>Post-construction or renovation cleaning to remove dust, debris and restore your home to a pristine condition.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">👕</div>
+        <h4>Ironing</h4>
+        <p>Our cleaners are happy to iron as well as clean. Many clients find this more cost effective than a separate ironing service.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📞</div>
+        <h4>Free Home Visit & Quote</h4>
+        <p>We visit you personally to understand your exact requirements and provide an accurate quote. No obligation, no hard sell.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        How many hours of cleaning will I need?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Great question! We understand that you may not always be sure of the exact length of time needed for your clean. By visiting you personally at your convenience we are able to understand your exact requirements and situation and are able to advise you more accurately. If you are on a budget we will discuss how we may best serve you, subject to a minimum of 2 hours of cleaning per visit.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Do you supply the cleaning materials?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">No we don't. We will use your cleaning materials, vacuum cleaner, mops etc. This enables us to keep our costs to a minimum which we would otherwise have to pass on to you by charging a higher hourly rate. Most clients tell us they prefer us to use their products as it feels 'safer' — they know exactly which products are being used in their home and there is then no risk of cross contamination between houses.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Can you also do my ironing?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Yes with pleasure! Our cleaners are happy to iron as well as clean for you if you wish. Many clients find this to be more cost effective and less expensive than using an ironing service.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Will I get to meet my cleaner first?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Most certainly. Prior to starting work for you, your cleaner will contact you by phone to introduce herself. At this time she will arrange to come and see you at a time convenient for you. You will then be able to meet with her, ask any questions you wish, and give her a key to the property also if it is needed.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Do I need to be at home on my cleaning day?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">This is entirely your choice. Our cleaners are used to being key holders as the majority of our clients are out at work on their cleaning day. However, if you prefer to be there on the day that is absolutely fine with us also.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        How do you select your cleaners?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">With great care! Only a very small percentage of applicants are successful in getting past the first stage. If they are successful, we then arrange to interview them in their own home. They then have to pass a second in-depth interview during which we will also check ID and proof of address. If they pass successfully, at the third stage we will contact past employers and obtain written references. Only if we are entirely satisfied do we enrol them on our database.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Do you do 'one-off' spring cleans or end of tenancy cleans?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Yes. We also specialise in one off spring cleans and end of tenancy cleaning, either instead of or as well as our regular weekly or fortnightly cleaning service. For one off cleans we will supply all cleaning materials and equipment necessary to complete the work. For a quote please give us a call.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What if my cleaner is sick or on holiday?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Your cleaner will inform you if she is to be away on holiday, and she will also inform you if she is ill on the day the clean is due. If you wish us to send a replacement cleaner whilst she is off, simply telephone our office and we will make the arrangements. We never automatically send a replacement without your consent.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Can I change my cleaner if I am not happy?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">It is imperative to us that you are 100% happy with your cleaner. In the unlikely event that you are not satisfied for any reason, simply contact us and we shall arrange a replacement.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Are you insured for accidental damage?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Yes. For your peace of mind we have public liability insurance cover of up to £2 million, subject to our terms &amp; conditions and a £100 excess on the policy.</div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <h2>A Few Words from Our Happy Clients</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <blockquote>"Just wanted to drop you a line to say we are absolutely delighted with Verity.. it's like coming home to a hotel! Many thanks again"</blockquote>
+        <div class="testimonial-author">Michelle C</div>
+        <div class="testimonial-location">Wigan</div>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"Dear Carole, Thank you for supplying me with an excellent cleaning service ... I have been delighted with Adele and Diane"</blockquote>
+        <div class="testimonial-author">Ceri</div>
+        <div class="testimonial-location">Upholland</div>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"Just wanted to let you know how pleased I am with Kim my cleaner. She is so good, always does exactly what is needed and a fab job. So reliable. Credit to your company. Thanks"</blockquote>
+        <div class="testimonial-author">Tricia C</div>
+        <div class="testimonial-location">Billinge</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p class="section-sub">Get in touch to arrange your free, no-obligation home visit and quote</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p>We'd love to hear from you. Whether you're ready to book or just want to find out more, give us a call or drop us a message — we'll get back to you promptly.</p>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">📞</span>
+          <a href="tel:07511815204">07511 815204</a>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">📍</span>
+          <span>Wigan and Nearby Areas, Greater Manchester</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">🕐</span>
+          <span>Monday – Friday, 9am – 5pm</span>
+        </div>
+        <p style="margin-top: 24px; font-size: 0.9rem; color: #888;">AllClean are open for business. Your safety and that of our cleaners is paramount at all times.</p>
+      </div>
+      <div class="callback-form-box">
+        <h3>Send Us a Message</h3>
+        <form onsubmit="handleForm2(event)">
+          <div class="form-group">
+            <label for="c-name">Your Name</label>
+            <input type="text" id="c-name" placeholder="e.g. Jane Smith" required />
+          </div>
+          <div class="form-group">
+            <label for="c-phone">Phone Number</label>
+            <input type="tel" id="c-phone" placeholder="e.g. 07700 900000" required />
+          </div>
+          <div class="form-group">
+            <label for="c-email">Email Address</label>
+            <input type="email" id="c-email" placeholder="e.g. jane@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="c-msg">Your Message</label>
+            <textarea id="c-msg" placeholder="Tell us about your cleaning requirements..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message</button>
+        </form>
+        <p id="form-thanks2" style="display:none; margin-top:16px; color:var(--orange); font-weight:700; text-align:center;">
+          ✅ Thank you! We'll be in touch shortly.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- JOBS -->
+  <section id="jobs">
+    <h2>Work With Us</h2>
+    <p>Are you a reliable, trustworthy person looking for flexible work as a domestic cleaner in the Wigan area? AllClean are always looking for the right people to join our team.</p>
+    <p>We have a thorough but fair selection process, and we look after our cleaners. If you'd like to find out more, please get in touch.</p>
+    <a href="tel:07511815204" class="btn-primary">📞 Call Us: 07511 815204</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>© 2025 AllClean Domestic Cleaning Agency. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#faq">FAQ</a>
+      <a href="#jobs">Jobs</a>
+    </div>
+    <div style="font-size:0.8rem; color:#666;">Wigan &amp; Nearby Areas · 07511 815204</div>
+  </footer>
+
+  <script>
+    // Hamburger menu
+    document.getElementById('hamburger').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // Close nav when link clicked on mobile
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+
+    // FAQ accordion
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    }
+
+    // Form handlers (UI only - no backend)
+    function handleForm(e) {
+      e.preventDefault();
+      document.getElementById('form-thanks').style.display = 'block';
+      e.target.reset();
+    }
+
+    function handleForm2(e) {
+      e.preventDefault();
+      document.getElementById('form-thanks2').style.display = 'block';
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
