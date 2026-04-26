@@ -652,25 +652,14 @@
       <a href="tel:07511815204" class="btn-primary">📞 Call 07511 815204 Now</a>
     </div>
     <div class="callback-form-box">
-      <h3>Request a Callback</h3>
-      <form onsubmit="handleForm(event)">
-        <div class="form-group">
-          <label for="cb-name">Your Name</label>
-          <input type="text" id="cb-name" placeholder="e.g. Jane Smith" required />
-        </div>
-        <div class="form-group">
-          <label for="cb-phone">Phone Number</label>
-          <input type="tel" id="cb-phone" placeholder="e.g. 07700 900000" required />
-        </div>
-        <div class="form-group">
-          <label for="cb-msg">Tell us about your requirements (optional)</label>
-          <textarea id="cb-msg" placeholder="e.g. Weekly clean, 3 bed house in Wigan..."></textarea>
-        </div>
-        <button type="submit" class="form-submit">Request Callback</button>
-      </form>
-      <p id="form-thanks" style="display:none; margin-top:16px; color: var(--orange); font-weight:700; text-align:center;">
-        ✅ Thank you! We'll be in touch shortly.
-      </p>
+      <h3>Get in Touch</h3>
+      <p style="color:#555; margin-bottom:28px;">Give us a call or drop us an email — we'd love to hear from you. No hard sell, just a friendly chat about your cleaning needs.</p>
+      <a href="tel:07511815204" class="form-submit" style="display:block; text-align:center; text-decoration:none; margin-bottom:16px; padding:16px; font-size:1.1rem;">
+        📞 Call 07511 815204
+      </a>
+      <a href="mailto:info@allclean.cleaning" class="form-submit" style="display:block; text-align:center; text-decoration:none; background:#555; padding:16px; font-size:1rem;">
+        ✉️ info@allclean.cleaning
+      </a>
     </div>
   </section>
 
@@ -844,29 +833,15 @@
         <p style="margin-top: 24px; font-size: 0.9rem; color: #888;">AllClean are open for business. Your safety and that of our cleaners is paramount at all times.</p>
       </div>
       <div class="callback-form-box">
-        <h3>Send Us a Message</h3>
-        <form onsubmit="handleForm2(event)">
-          <div class="form-group">
-            <label for="c-name">Your Name</label>
-            <input type="text" id="c-name" placeholder="e.g. Jane Smith" required />
-          </div>
-          <div class="form-group">
-            <label for="c-phone">Phone Number</label>
-            <input type="tel" id="c-phone" placeholder="e.g. 07700 900000" required />
-          </div>
-          <div class="form-group">
-            <label for="c-email">Email Address</label>
-            <input type="email" id="c-email" placeholder="e.g. jane@example.com" />
-          </div>
-          <div class="form-group">
-            <label for="c-msg">Your Message</label>
-            <textarea id="c-msg" placeholder="Tell us about your cleaning requirements..." required></textarea>
-          </div>
-          <button type="submit" class="form-submit">Send Message</button>
-        </form>
-        <p id="form-thanks2" style="display:none; margin-top:16px; color:var(--orange); font-weight:700; text-align:center;">
-          ✅ Thank you! We'll be in touch shortly.
-        </p>
+        <h3>Get in Touch</h3>
+        <p style="color:#555; margin-bottom:28px;">We'd love to hear from you. Call us for a chat, or send an email and we'll get back to you promptly.</p>
+        <a href="tel:07511815204" class="form-submit" style="display:block; text-align:center; text-decoration:none; margin-bottom:16px; padding:16px; font-size:1.1rem;">
+          📞 Call 07511 815204
+        </a>
+        <a href="mailto:info@allclean.cleaning" class="form-submit" style="display:block; text-align:center; text-decoration:none; background:#555; padding:16px; font-size:1rem;">
+          ✉️ info@allclean.cleaning
+        </a>
+        <p style="margin-top:20px; font-size:0.85rem; color:#999; text-align:center;">Monday – Friday, 9am – 5pm</p>
       </div>
     </div>
   </section>
@@ -901,7 +876,6 @@
       document.getElementById('navLinks').classList.toggle('open');
     });
 
-    // Close nav when link clicked on mobile
     document.querySelectorAll('.nav-links a').forEach(a => {
       a.addEventListener('click', () => {
         document.getElementById('navLinks').classList.remove('open');
@@ -914,19 +888,6 @@
       const wasOpen = item.classList.contains('open');
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
       if (!wasOpen) item.classList.add('open');
-    }
-
-    // Form handlers (UI only - no backend)
-    function handleForm(e) {
-      e.preventDefault();
-      document.getElementById('form-thanks').style.display = 'block';
-      e.target.reset();
-    }
-
-    function handleForm2(e) {
-      e.preventDefault();
-      document.getElementById('form-thanks2').style.display = 'block';
-      e.target.reset();
     }
   </script>
 </body>
